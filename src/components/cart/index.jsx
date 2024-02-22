@@ -11,7 +11,7 @@ const Cart = ({ isVisible, setIsVisible }) => {
   const cartTotalPrice = useSelector(selectProductsTotalPrice);
 
   return (
-    <Styles.CartContainer isVisible={isVisible}>
+    <Styles.CartContainer isvisible={isVisible ? "true" : "false"}>
       <Styles.CartEscapeArea onClick={handleEscapeAreaClick} />
       <Styles.CartContent>
         {products.length > 0 ? (
@@ -22,10 +22,14 @@ const Cart = ({ isVisible, setIsVisible }) => {
               <CartItem product={product} key={index} />
             ))}
 
-            <Styles.CartTotal>Valor total: R$ {cartTotalPrice}</Styles.CartTotal>
+            <Styles.CartTotal>
+              Valor total: R$ {cartTotalPrice}
+            </Styles.CartTotal>
           </>
         ) : (
-          <Styles.CartEmptyMessage>Seu carrinho está vazio</Styles.CartEmptyMessage>
+          <Styles.CartEmptyMessage>
+            Seu carrinho está vazio
+          </Styles.CartEmptyMessage>
         )}
       </Styles.CartContent>
     </Styles.CartContainer>
