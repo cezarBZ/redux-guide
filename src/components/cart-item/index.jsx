@@ -14,22 +14,17 @@ const CartItem = ({ product }) => {
         <Styles.CartItemQuantity>
           <AiOutlineMinus
             size={20}
-            // onClick={handleDecreaseClick}
             aria-label={`Decrease quantity of ${product.name}`}
           />
           <p>{product.quantity}</p>
           <AiOutlinePlus
             size={20}
-            // onClick={handleIncreaseClick}
             aria-label={`Increase quantity of ${product.name}`}
           />
         </Styles.CartItemQuantity>
       </Styles.CartItemInfo>
 
-      <Styles.RemoveButton
-        // onClick={handleRemoveClick}
-        aria-label={`Remove ${product.name}`}
-      >
+      <Styles.RemoveButton aria-label={`Remove ${product.name}`}>
         <AiOutlineClose size={25} />
       </Styles.RemoveButton>
     </Styles.CartItemContainer>
