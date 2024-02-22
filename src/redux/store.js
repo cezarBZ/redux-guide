@@ -1,8 +1,12 @@
-import { createStore, applyMiddleware } from "redux"
+import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
+import cartReducer from "./cart/slice";
 
-import rootReducer from './rootReducer'
-
-const store = createStore(rootReducer, applyMiddleware(logger))
+const store = configureStore({
+  reducer: {
+    cart: cartReducer,
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+});
 
 export default store;

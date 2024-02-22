@@ -13,6 +13,8 @@ function Header() {
   };
 
   return (
+    <>
+    
     <Styles.Container>
       <Styles.Logo>Redux Shopping</Styles.Logo>
       <Styles.Buttons>
@@ -21,6 +23,7 @@ function Header() {
 
       <Cart isVisible={cartIsVisible} setIsVisible={setCartIsVisible} />
     </Styles.Container>
+    </>
   );
 }
 
