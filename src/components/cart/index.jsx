@@ -11,32 +11,28 @@ const Cart = ({ isVisible, setIsVisible }) => {
   const cartTotalPrice = useSelector(selectProductsTotalPrice);
 
   return (
-    <>
-      {isVisible && (
-        <Styles.CartContainer>
-          <Styles.CartEscapeArea onClick={handleEscapeAreaClick} />
-          <Styles.CartContent>
-            {products.length > 0 ? (
-              <>
-                <Styles.CartTitle>Seu Carrinho</Styles.CartTitle>
+    <Styles.CartContainer isvisible={isVisible ? 'true' : 'false'}>
+      <Styles.CartEscapeArea onClick={handleEscapeAreaClick} />
+      <Styles.CartContent>
+        {products.length > 0 ? (
+          <>
+            <Styles.CartTitle>Seu Carrinho</Styles.CartTitle>
 
-                {products.map((product, index) => (
-                  <CartItem product={product} key={index} />
-                ))}
+            {products.map((product, index) => (
+              <CartItem product={product} key={index} />
+            ))}
 
-                <Styles.CartTotal>
-                  Valor total: R$ {cartTotalPrice}
-                </Styles.CartTotal>
-              </>
-            ) : (
-              <Styles.CartEmptyMessage>
-                Seu carrinho está vazio
-              </Styles.CartEmptyMessage>
-            )}
-          </Styles.CartContent>
-        </Styles.CartContainer>
-      )}
-    </>
+            <Styles.CartTotal>
+              Valor total: R$ {cartTotalPrice}
+            </Styles.CartTotal>
+          </>
+        ) : (
+          <Styles.CartEmptyMessage>
+            Seu carrinho está vazio
+          </Styles.CartEmptyMessage>
+        )}
+      </Styles.CartContent>
+    </Styles.CartContainer>
   );
 };
 

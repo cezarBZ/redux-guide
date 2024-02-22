@@ -11,7 +11,8 @@ export const CartContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: flex-end;
-  opacity: ${(props) => (props.isVisible ? "1" : "0")};
+  visibility: ${(props) => (props.isvisible === 'true' ? "visible" : "hidden")};
+  opacity: ${(props) => (props.isvisible ? "1" : "0")};
   transition: all 0.3s ease;
 
   p {
