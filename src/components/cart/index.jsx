@@ -1,27 +1,32 @@
 /* eslint-disable react/prop-types */
 import { useSelector } from "react-redux";
 import CartItem from "../cart-item/index";
-// Styles
-import * as Styles from "./styles"
-import products from "../../data/products";
-// import { selectProductsTotalPrice } from "../../redux/cart/cart.selectors";
+import { selectProductsTotalPrice } from "../../redux/cart/cart.selectors";
+import * as Styles from "./styles";
 
 const Cart = ({ isVisible, setIsVisible }) => {
   const handleEscapeAreaClick = () => setIsVisible(false);
 
-  // const { products } = useSelector((rootReducer) => rootReducer.cartReducer);
-  // const totalPrice = useSelector(selectProductsTotalPrice);
+  const { products } = useSelector((rootReducer) => rootReducer.cartReducer);
+  const cartTotalPrice = useSelector(selectProductsTotalPrice);
 
   return (
     <Styles.CartContainer isVisible={isVisible}>
       <Styles.CartEscapeArea onClick={handleEscapeAreaClick} />
       <Styles.CartContent>
-        <Styles.CartTitle>Seu Carrinho</Styles.CartTitle>
+        {products.length > 0 ? (
+          <>
+            <Styles.CartTitle>Seu Carrinho</Styles.CartTitle>
 
-        {products.map((product, index) => (
-          <CartItem product={product} key={index} />
-        ))}
-        <Styles.CartTotal>{0}</Styles.CartTotal>
+            {products.map((product, index) => (
+              <CartItem product={product} key={index} />
+            ))}
+
+            <Styles.CartTotal>Valor total: R$ {cartTotalPrice}</Styles.CartTotal>
+          </>
+        ) : (
+          <Styles.CartEmptyMessage>Seu carrinho está vazio</Styles.CartEmptyMessage>
+        )}
       </Styles.CartContent>
     </Styles.CartContainer>
   );
