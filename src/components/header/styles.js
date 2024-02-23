@@ -11,23 +11,36 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.div`
-  font-size: 1.25rem;
+  font-size: 1.55rem;
   font-weight: bold;
+  font-family: monospace;
+
+  span {
+    font-size: 1.30rem;
+    color: purple;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+  }
 `;
 
 export const Buttons = styled.div`
   display: flex;
   align-items: center;
+  font-size: 37px;
+  display: flex;
+  position: relative;
+  margin-right: 10px;
 
-  div {
-    font-weight: 500;
+  cursor: pointer;
+`;
 
-    &:hover {
-      cursor: pointer;
-    }
-
-    &:nth-child(1) {
-      margin-right: 40px;
-    }
-  }
+export const CartCount = styled.span`
+  color: black;
+  font-weight: 600;
+  font-size: initial;
+  background: white;
+  padding: 3px 11px;
+  border-radius: 50%;
+  position: absolute;
+  left: 26px;
+  top: 24px;
 `;

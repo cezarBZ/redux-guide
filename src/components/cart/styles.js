@@ -11,7 +11,7 @@ export const CartContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: flex-end;
-  visibility: ${(props) => (props.isvisible === 'true' ? "visible" : "hidden")};
+  visibility: ${(props) => (props.isvisible === "true" ? "visible" : "hidden")};
   opacity: ${(props) => (props.isvisible ? "1" : "0")};
   transition: all 0.3s ease;
 
@@ -41,10 +41,15 @@ export const CartTitle = styled.p`
   font-weight: 600;
   margin-bottom: 15px;
 `;
-export const CartTotal = styled.p`
-  font-weight: 600;
-  font-size: 1.125rem;
-  margin-bottom: 15px;
+export const CartTotal = styled.div`
+  display: flex;
+  justify-content: space-between;
+  p {
+    color: black;
+    font-weight: 600;
+    font-size: 1.22rem;
+    margin-bottom: 15px;
+  }
 `;
 export const CartEmptyMessage = styled.h3`
   color: black;
