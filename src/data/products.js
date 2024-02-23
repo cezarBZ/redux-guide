@@ -2,13 +2,13 @@ const products = [
   {
     id: "6228fe63b7e6cb904bbe0165",
     price: 150,
-    name: "Suéter Branco",
+    name: "Cropped branco",
     imageUrl:
-      "https://images.unsplash.com/flagged/photo-1559502867-c406bd78ff24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
+      "https://img.ltwebstatic.com/images3_spmp/2023/11/17/c2/1700234830353fc4ab7013b49a87441775b2f92812_thumbnail_720x.jpg",
   },
   {
     id: "6228fec7b7e6cb904bbe016f",
-    name: "Regata Azul",
+    name: "Cropped verde",
     price: 150,
     imageUrl:
       "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80s",

@@ -12,10 +12,10 @@ export const ProductContainer = styled.div`
 export const ProductInfo = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 5px;
+  margin-top: 10px;
 
   p {
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 500;
   }
 `;

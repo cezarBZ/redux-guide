@@ -23,7 +23,8 @@ const Cart = ({ isVisible, setIsVisible }) => {
             ))}
 
             <Styles.CartTotal>
-              Valor total: R$ {cartTotalPrice}
+              <p>Valor total:</p>
+              <p>R$ {cartTotalPrice}</p>
             </Styles.CartTotal>
           </>
         ) : (
