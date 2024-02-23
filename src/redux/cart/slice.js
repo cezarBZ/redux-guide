@@ -8,6 +8,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    // Adiciona produto
     addProductToCart: (state, action) => {
       const productIsAlreadyInCart = state.products.some(
         (product) => product.id === action.payload.id
@@ -25,12 +26,14 @@ const cartSlice = createSlice({
       state.products = [...state.products, { ...action.payload, quantity: 1 }];
     },
 
+    // Remove produto do carrinho
     removeProductFromCart: (state, action) => {
       state.products = state.products.filter(
         (product) => product.id !== action.payload
       );
     },
 
+    // Diminui quantidade de um produto do carrinho
     decreaseProductQuantity(state, action) {
       state.products = state.products
         .map((product) =>
